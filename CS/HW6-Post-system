@@ -1,0 +1,36 @@
+Reseni domaciho ukolu Posta (Jaroslav Jindrak):
+-----------------------------------------------
+
+Pocet aut = 1088
+Struktura postovni site:
+    Postovni sit tvori 32 linek SEVER-JIH (jedna v kazdem z 32 sloupcu)
+    a 2 linky ZAPAD-VYCHOD. Pro otestovani podminky (doruceni do 24 hodin)
+    jsem uvazoval nasledujici situaci:
+    
+        Zasilka putuje z mesta (1,1) do mesta (32,32), bohuzel pan Murphy 
+        zaridil, ze postovni auto z mesta, kam ma byt zasilka ulozena 
+        (podana nebo ceka na zmenu linky) odjede maly okamzik (doslova
+        blizici se nule) pred tim, nez zasilka na danou postu dorazi.
+        Cesta pres jednu linku trva 11,1 hodiny (2x0.25 vykladka/nakladka
+        na startovni a finalni poste + 31x0.1 cesty mezi mesty a ke vsi smule
+        podavajiciho, auto vezouci zasilku stavi v kazdem meste a 0.25
+        hodiny preklada postu + 30x0.25).
+        Na kazdou z onech dvou linek, pres ktere zasilka pojede, tedy linku
+        z mesta (1,1) do (1,32) a linku z mesta (1,32) do (32,32) muze cekat
+        pouze 0.9 hodiny, aby podminka doruceni do 24 hodin byla splnena.
+        Splnit tuto maximalni cekaci lhutu lze pouzitim 32 aut na 
+        kazde lince (s 32 [16 jedoucimi v kazdem smeru] bude cekaci lhuta
+        0.7 hodiny). 34 linek tedy spotrebuje 1088 aut, coz je priblizne
+        o 513000 aut mene, nez na kolik navrhl konkurencni plan (514000 aut)
+        RNDr. Tomas Holan, PhD., coz pri cenne cca 0.5 milionu korun za novy
+        vuz Skoda Yetti (nejkvalitnejsi auto ktere spoji cestu mesty i poustnimi
+        cestami mezi nimi) usetri priblizne 265.5 miliard korun.
+    
+    Zaver:
+        Tento navrh splnuje veskere podminky zadani ulohy a usetri cca ctvrt
+        bilionu korun, oproti dalsimu me znamemu navrhu v teto verejne soutezi.
+        
+    Pozn:
+        Bohuzel se mi nepodarilo vcas najit lepsi reseni nez 1088 aut, snazil
+        jsem se jej dosahnout rozdelovanim na ruzne rozmerne regiony (4x4 ci 8x8),
+        ale pokazde dodaci doba v nejhorsim pripade prekrocila limit 24 hodin.

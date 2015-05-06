@@ -1,0 +1,38 @@
+  0)Stojím v přízemí.
+      I)Spojím si dráty do následujících skupin:
+                 2 dráty = A
+                 3 dráty = B
+                 4 dráty = C
+                 5 drátů = D
+                 6 drátů = E
+     II)Zbylých 7 drátů označím F.
+
+  1)Vyjdu po schodech nahoru.
+      I)Provedu zkoušku, dráty si podle počtu ve skupině označím podle schématu z kroku 0).
+     II)Spojím (a označím) dráty do šesti skupin tímto způsobem*:
+
+                 Skupiny:                                        Označení:
+                 1xF + 1xE + 1xD + 1xC             |             (1) + (2) + (3) + (4)**
+                 1xF + 1xE + 1xD                   |             (5) + (6) + (7)
+                 1xF +       1xD + 1xC             |             (8) + (9) + (10)
+                 1xF + 1xE + 1xD + 1xC + 1xB       |             (11) + (12) + (13) + (14) + (15) 
+                 1xF + 1xE             + 1xB       |             (16) + (17) + (18)
+                 1xF + 1xE                   + 1xA |             (19) + (20) + (21)
+    III)Zbylých 6 drátů si ozačím (22), (23), (24), (25), (26), (27).
+        (Každý je z jiné skupiny, tedy si vím, že nezapojený drát ze skupiny A má číslo (22) atp.)
+
+  2)Sejdu po schodech dolů.
+      I)Rozpojím skupiny z kroku 0) a provedu zkoušku, nespojené dráty si mohu očíslovat (22) až 
+        (27) podle části III) kroku 1).
+     II)Podle kombinací skupin A B C D E F v současném systému spojených drátů mohu očíslovat dráty
+        (1) až (21) a tedy všech 27 drátů bude mít dole a nahoře stejné číslo, čímž je úloha
+        splněna.
+
+---------------------------------------------------------------------------------------------------
+*Nemusí zcela nutně jít o tento systém, stačí libovolné různé skupiny, ze kterých by byly dané 
+ dráty v části II) kroku 2) identifikovatelné, já zvolil dané schéma kůli jeho jednoduchosti
+ a snadnému přehledu o využití drátů z jednotlivých supiny (celkem muselo být použito n-1 drátů
+ z každé skupiny, kde n je počet drátů v dané skupině).
+**Čísluju podle složení skupiny, tedy pokud najdu skupinu, kde bude FEDC tak vím, že F je (1),
+  E je (2), D je (3) a C je (4).
+                

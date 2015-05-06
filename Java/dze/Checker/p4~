@@ -1,0 +1,1 @@
+AND(AND(A, OR(B, OR(C, NEG(A)))), OR(AND(NEG(B), NEG(C)), D)) => D
