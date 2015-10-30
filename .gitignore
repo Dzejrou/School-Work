@@ -17,6 +17,9 @@ CPP/phone_list/test
 CPP/scheduler/*.o
 CPP/scheduler/sched
 
+*.o
+.*.swp
+
 Haskell/Others_HW/*
 
 Prolog/Others_HW/*
