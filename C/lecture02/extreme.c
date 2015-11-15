@@ -1,11 +1,5 @@
 #include "extreme.h"
 
-/**
- * Brief: Returns an extreme from a given set of integers.
- * Param: Struct containing the comparator function and the starting extreme value.
- * Param: Number of the numbers being processed.
- * Param: Variable argument list of numbers.
- */
 int ext(cmp_t cmp, int cnt, ...)
 {
 	int res = cmp.extreme;
