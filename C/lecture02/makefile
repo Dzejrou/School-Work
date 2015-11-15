@@ -1,12 +1,12 @@
 CC=clang
-ARGS=-std=c99 -g -fPIC
+CFLAGS=-std=c99 -g -fPIC
 EXEC=ext
 
 %.o: %.c
-	$(CC) -c $< -o $@ $(ARGS)
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 all: main.o libext.so
-	$(CC) main.o -o $(EXEC) $(ARGS)
+	$(CC) main.o -o $(EXEC) $(CFLAGS)
 
 clean:
 	rm *.o
