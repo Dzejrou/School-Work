@@ -15,8 +15,8 @@ typedef int (*comparator)(int, int);
  */
 typedef struct cmp_t_
 {
-	int extreme;
-	comparator cmp_func;
+    int extreme;
+    comparator cmp_func;
 } cmp_t;
 
 /**
@@ -30,7 +30,7 @@ typedef int (*ext_func)(cmp_t, int, ...);
  */
 enum op
 {
-	MIN = 0, MAX
+    MIN = 0, MAX
 };
 
 /**

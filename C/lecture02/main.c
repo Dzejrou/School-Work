@@ -21,24 +21,24 @@ void* lib_handle = NULL;
  */
 int main(int argc, char** argv)
 {
-	lib_handle = dlopen("./libext.so", RTLD_NOW);
-	if(!lib_handle)
-	{
-		printf("Cannot locate libmin.so in the current directory.\n");
-		safe_exit(EXIT_FAILURE);
-	}
-	ext_func ext = (ext_func)dlsym(lib_handle, "ext");
+    lib_handle = dlopen("./libext.so", RTLD_NOW);
+    if(!lib_handle)
+    {
+        printf("Cannot locate libmin.so in the current directory.\n");
+        safe_exit(EXIT_FAILURE);
+    }
+    ext_func ext = (ext_func)dlsym(lib_handle, "ext");
 
-	char c;
-	int op;
-	while((c = getopt(argc, argv, "o:e:h")) != -1)
-	{
-		switch(c)
-		{
-			case 'o':
-				op = (strncmp("max", optarg, 3) == 0) ? MAX : MIN;
-				break;
-			case 'e':
+    char c;
+    int op;
+    while((c = getopt(argc, argv, "o:e:h")) != -1)
+    {
+        switch(c)
+        {
+            case 'o':
+                op = (strncmp("max", optarg, 3) == 0) ? MAX : MIN;
+                break;
+            case 'e':
             {
                 char* tmp = getenv(optarg);
                 if(tmp == NULL)
@@ -46,31 +46,31 @@ int main(int argc, char** argv)
                     printf("Invalid environment variable: %s\n", optarg);
                     safe_exit(EXIT_FAILURE);
                 }
-				op = (strncmp("max", tmp, 3) == 0) ? MAX : MIN;
-				break;
+                op = (strncmp("max", tmp, 3) == 0) ? MAX : MIN;
+                break;
             }
-			case 'h':
-				printf("Set operation type by -o {min|max} or -e ENV_VAR.\n");
-				printf("Default operation: min\n");
-				break;
-		}
-	}
+            case 'h':
+                printf("Set operation type by -o {min|max} or -e ENV_VAR.\n");
+                printf("Default operation: min\n");
+                break;
+        }
+    }
 
-	cmp_t cmp;
+    cmp_t cmp;
 
-	if(op == MAX)
-	{
-		cmp.extreme = INT_MIN;;
-		cmp.cmp_func = &max_cmp;
-	}
-	else
-	{
-		cmp.extreme = INT_MAX;;
-		cmp.cmp_func = &min_cmp;
-	}
+    if(op == MAX)
+    {
+        cmp.extreme = INT_MIN;;
+        cmp.cmp_func = &max_cmp;
+    }
+    else
+    {
+        cmp.extreme = INT_MAX;;
+        cmp.cmp_func = &min_cmp;
+    }
 
-	printf("%d\n", ext(cmp, 4, 1, 2, 3, 4));
-	safe_exit(EXIT_SUCCESS);
+    printf("%d\n", ext(cmp, 4, 1, 2, 3, 4));
+    safe_exit(EXIT_SUCCESS);
 }
 
 /**
@@ -80,7 +80,7 @@ int main(int argc, char** argv)
  */
 int min_cmp(int fnum, int snum)
 {
-	return fnum < snum;
+    return fnum < snum;
 }
 
 /**
@@ -90,7 +90,7 @@ int min_cmp(int fnum, int snum)
  */
 int max_cmp(int fnum, int snum)
 {
-	return fnum > snum;
+    return fnum > snum;
 }
 
 /**
@@ -99,7 +99,7 @@ int max_cmp(int fnum, int snum)
  */
 void safe_exit(int ret)
 {
-	if(lib_handle)
-		dlclose(lib_handle);
-	exit(ret);
+    if(lib_handle)
+        dlclose(lib_handle);
+    exit(ret);
 }
