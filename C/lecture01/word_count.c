@@ -25,7 +25,6 @@ int main(int argc, char** argv)
 
 	while(scanf("%s ", buff) == 1 || scanf("%s\n", buff) == 1)
 	{
-		//printf("Reading: %s [Word count: %d]\n", buff, word_count);
 		if(strlen(buff) <= max_length)
 		{
 			++word_count;
