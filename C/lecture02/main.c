@@ -22,13 +22,12 @@ void* lib_handle = NULL;
 int main(int argc, char** argv)
 {
 	lib_handle = dlopen("./libext.so", RTLD_NOW);
-	ext_func ext = dlsym(lib_handle, "ext");
-
 	if(!lib_handle)
 	{
 		printf("Cannot locate libmin.so in the current directory.\n");
 		safe_exit(EXIT_FAILURE);
 	}
+	ext_func ext = (ext_func)dlsym(lib_handle, "ext");
 
 	char c;
 	int op;
@@ -40,8 +39,16 @@ int main(int argc, char** argv)
 				op = (strncmp("max", optarg, 3) == 0) ? MAX : MIN;
 				break;
 			case 'e':
-				op = (strncmp("max", getenv(optarg), 3) == 0) ? MAX : MIN;
+            {
+                char* tmp = getenv(optarg);
+                if(tmp == NULL)
+                {
+                    printf("Invalid environment variable: %s\n", optarg);
+                    safe_exit(EXIT_FAILURE);
+                }
+				op = (strncmp("max", tmp, 3) == 0) ? MAX : MIN;
 				break;
+            }
 			case 'h':
 				printf("Set operation type by -o {min|max} or -e ENV_VAR.\n");
 				printf("Default operation: min\n");
