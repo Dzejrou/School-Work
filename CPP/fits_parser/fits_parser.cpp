@@ -96,7 +96,6 @@ void parse(const std::string& fname)
         if(name == "BITPIX")
         {
             val = value(kword,1);
-            int tmp_val;
             if(val == "32" || val == "-32")
             {
                 number_size = 4;
@@ -203,7 +202,7 @@ std::string value(const std::string& kword, int type)
      */
 {
     std::string tmpstr{};
-    int i = 10;
+    std::size_t i = 10;
     while(kword[i] == ' ' || kword[i] == '=')
         ++i;
 
@@ -249,7 +248,7 @@ int closest_end(int val)
 
 bool is_num(const std::string& num)
 {
-    for(int i = 0; i < num.length(); ++i)
+    for(std::size_t i = 0; i < num.length(); ++i)
     {
         if(num[i] == '/')
             return false;
